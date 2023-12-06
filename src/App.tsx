@@ -1,11 +1,13 @@
+import { useState } from "react";
+import { mockTodos } from "./constants";
+import Todos from "./components/shared/Todos";
 
-function App() {
+export default function App() {
 
+  const [todos] = useState(mockTodos)
   return (
     <div>
-      <h1>Todo MVC</h1>
+      <Todos todos={todos}/>
     </div>
   )
 }
-
-export default App
