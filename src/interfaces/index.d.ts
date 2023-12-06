@@ -3,11 +3,13 @@ export interface TodosProps {
     id:number,
     title:string,
     completed:boolean
-  }[]
+  }[],
+  handleRemove: (id:number)=>void
 }
 
 export interface TodoProps {
   id:number,
   title:string,
-  completed:boolean
+  completed:boolean,
+  handleRemove: (id:number)=>void
 }
