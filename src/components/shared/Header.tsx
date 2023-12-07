@@ -1,8 +1,5 @@
 import CreateTodo from "./CreateTodo"
-
-export interface HeaderProps {
-  onAddTodo:(title:string)=> void
-}
+import { HeaderProps } from "../../interfaces"
 
 export default function Header({onAddTodo}:HeaderProps) {
   return (

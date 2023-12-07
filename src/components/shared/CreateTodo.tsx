@@ -1,8 +1,5 @@
 import React,{ useState } from 'react'
-
-export interface CreateTodoProps {
-  saveTodo:(title:string)=> void
-}
+import { CreateTodoProps } from '../../interfaces/index'
 
 export default function CreateTodo({saveTodo}:CreateTodoProps) {
 

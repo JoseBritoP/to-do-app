@@ -1,15 +1,6 @@
-import { 
-  // TODO_FILTERS,
-  FILTERS_BUTTONS, FilterValue } from '../../constants'
-
+import { FILTERS_BUTTONS, FilterValue } from '../../constants'
 // export type FilterValue = typeof TODO_FILTERS[keyof typeof TODO_FILTERS] //Cualquier key del objeto Todo_Filters
-
-interface FilterProps {
-  filterSelect: FilterValue,
-  onFilterChange: (filter:FilterValue) => void
-}
-
-
+import { FilterProps } from '../../interfaces';
 
 export default function Filter({filterSelect,onFilterChange}:FilterProps) {
   
