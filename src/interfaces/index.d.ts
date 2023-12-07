@@ -1,17 +1,17 @@
 export interface TodosProps {
   todos:{
-    id:number,
+    id:string,
     title:string,
     completed:boolean
   }[],
-  handleRemove: (id:number)=>void,
-  handleCompleted: ({id,completed}:{id:number,completed:boolean}) => void 
+  handleRemove: (id:string)=>void,
+  handleCompleted: ({id,completed}:{id:string,completed:boolean}) => void 
 }
 
 export interface TodoProps {
-  id:number,
+  id:string,
   title:string,
   completed:boolean,
-  handleRemove: (id:number)=>void,
-  handleCompleted: ({id,completed}:{id:number,completed:boolean}) => void 
+  handleRemove: (id:string)=>void,
+  handleCompleted: ({id,completed}:{id:string,completed:boolean}) => void 
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FilterValue, TODO_FILTERS, mockTodos } from "./constants";
 import Todos from "./components/shared/Todos";
 import Footer from "./components/shared/Footer";
+import Header from "./components/shared/Header";
 
 export default function App() {
 
@@ -21,7 +22,7 @@ export default function App() {
     setFilterSelected(filter)
   };
 
-  const handleRemove = (id:number)=>{
+  const handleRemove = (id:string)=>{
     const newTodos = todos.filter(todo=>todo.id !== id);
     setTodos(newTodos)
   };
@@ -31,7 +32,7 @@ export default function App() {
     setTodos(newTodos)
   };
 
-  const handleCompleted = ({id,completed}:{id:number,completed:boolean}) => {
+  const handleCompleted = ({id,completed}:{id:string,completed:boolean}) => {
     const newTodos = todos.map((todo)=>{
       if(todo.id === id){
         return {
@@ -43,8 +44,22 @@ export default function App() {
 
     setTodos(newTodos);
   };
+
+  const handleAddTodo=(title:string):void =>{
+
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title,
+      completed:false
+    }
+
+    const newTodos = [...todos,newTodo];
+    setTodos(newTodos)
+  };
+
   return (
     <div className="todoapp">
+      <Header onAddTodo={handleAddTodo}/>
       <Todos todos={filteredTodos} handleRemove ={handleRemove} handleCompleted = {handleCompleted}/>
       <Footer 
         activeCount={activeCount} 
