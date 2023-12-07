@@ -17,6 +17,13 @@ export default function Footer({activeCount,completedCount,onClearCompleted,filt
         <strong>{activeCount}</strong> items left
       </span>
       <Filter filterSelect = {filterSelected} onFilterChange = {handleFilterChange}/>
+      {
+        completedCount > 0 && 
+        (
+          <button className='clear-completed' onClick={onClearCompleted}> Delete completed
+          </button>
+        )
+      }
     </footer>
   )
 }

@@ -26,6 +26,11 @@ export default function App() {
     setTodos(newTodos)
   };
 
+  const handleRemoveAllCompleted = () => {
+    const newTodos = todos.filter((todo)=>!todo.completed);
+    setTodos(newTodos)
+  };
+
   const handleCompleted = ({id,completed}:{id:number,completed:boolean}) => {
     const newTodos = todos.map((todo)=>{
       if(todo.id === id){
@@ -44,7 +49,7 @@ export default function App() {
       <Footer 
         activeCount={activeCount} 
         completedCount={completedCount}
-        onClearCompleted={()=>{}}
+        onClearCompleted={handleRemoveAllCompleted}
         filterSelected={filterSelected} 
         handleFilterChange={handleFilterChange}
       />
